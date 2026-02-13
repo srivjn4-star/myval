@@ -6,6 +6,29 @@
     <title>Valentines Game</title>
 </head>
 <body>
+    <div id="instructions-ui">
+    <div class="instructions-card">
+        <div class="bow-bg"></div>
+        <h2>Welcome to the Adventure! 🎀</h2>
+        
+        <div class="instruction-grid">
+            <div class="inst-item">
+                <span class="key-cap">W</span> <span class="key-cap">A</span> <span class="key-cap">S</span> <span class="key-cap">D</span>
+                <p>Use these keys to move around the world!</p>
+            </div>
+            <div class="inst-item">
+                <span class="icon">🎁</span>
+                <p>Find the hidden chests to unlock a secret surprise!</p>
+            </div>
+            <div class="inst-item">
+                <span class="icon">🚧</span>
+                <p>Some paths are blocked or hidden—keep exploring!</p>
+            </div>
+        </div>
+
+        <button id="start-game-btn">LET'S GO! ✨</button>
+    </div>
+    </div>
     <div id="valentine-ui" class="hidden">
     <div id="question-card" class="valentine-card">
         <div class="bow-bg"></div>
@@ -19,7 +42,7 @@
     <div id="success-card" class="valentine-card hidden">
         <div class="bow-bg"></div>
         <h1 style="font-size: 3rem;">YAYYY! ❤️</h1>
-        <p style="color: #ff69b4; font-size: 1.5rem;">See you on Feb 14th! 🎀✨</p>
+        <p style="color: #ff69b4; font-size: 1.5rem;">I love youuu, mwah! 🎀✨</p>
         <div style="font-size: 50px;">💖🌸🍭</div>
         <button id="close-btn" style="margin-top: 20px; background: none; border: 1px solid #ffb6c1; color: #ffb6c1; cursor: pointer; border-radius: 10px;">Close Game</button>
     </div>
@@ -125,7 +148,68 @@
             0% { transform: scale(1); }
             50% { transform: scale(1.1); }
             100% { transform: scale(1); }
-}
+        }
+        #instructions-ui {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(255, 182, 193, 0.9); /* Thicker pink to hide game start */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 2000; /* Stays above everything */
+            transition: opacity 0.5s ease;
+        }
+
+        .instructions-card {
+            background: white;
+            padding: 40px;
+            border-radius: 25px;
+            border: 6px solid #ff69b4;
+            text-align: center;
+            max-width: 500px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+        }
+
+        .instruction-grid {
+            margin: 30px 0;
+            text-align: left;
+        }
+
+        .inst-item {
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .key-cap {
+            background: #f0f0f0;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            padding: 5px 10px;
+            font-family: monospace;
+            font-weight: bold;
+            box-shadow: 0 3px 0 #bbb;
+        }
+
+        .icon { font-size: 30px; }
+
+        #start-game-btn {
+            background-color: #ff69b4;
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            font-family: 'Comic Sans MS', cursive;
+            transition: transform 0.2s;
+        }
+
+        #start-game-btn:hover { transform: scale(1.1); }
     </style>
     
 </body>

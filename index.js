@@ -1,3 +1,19 @@
+
+const startBtn = document.getElementById('start-game-btn');
+const instructionsUI = document.getElementById('instructions-ui');
+
+startBtn.addEventListener('click', () => {
+    // Fade out the instructions
+    instructionsUI.style.opacity = '0';
+    
+    // Remove from DOM after fade
+    setTimeout(() => {
+        instructionsUI.style.display = 'none';
+    }, 500);
+    
+    // Optional: Start your game music here if you have any!
+});
+
 const canvas = document.querySelector('canvas');
 const c = canvas.getContext("2d");
 
@@ -400,3 +416,4 @@ closeBtn.addEventListener('click', () => {
     questionCard.classList.remove('hidden');
     successCard.classList.add('hidden');
 });
+
